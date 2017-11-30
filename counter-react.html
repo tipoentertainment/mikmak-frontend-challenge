@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>React Counter</title>
+
+    <script src="./lib/react.js"></script>
+    <script src="./lib/react-dom.js"></script>
+    <script src="./lib/babel.min.js"></script>
+
+    <link rel="stylesheet" href="./css/styles.css">
+  </head>
+
+  <body>
+
+    <div id="app"></div>
+
+    <script type="text/babel">
+      var Counter = React.createClass({
+        getInitialState() {
+          return {
+            count: 0,
+            title: 'React Counter'
+          };
+        },
+        increment() {
+          this.setState({count: this.state.count + 1});
+        },
+        decrement() {
+          if (this.state.count > 0) this.setState({count: this.state.count - 1});
+        },
+        render() {
+          return (
+            <div>
+              <h1 className="app-title">{ this.state.title }</h1>
+              <div className="app-current-count">
+                { this.state.count }
+              </div>
+              <div className="app-counter-buttons">
+                <button type="button" name="decrement" onClick={this.decrement}>-</button>
+                <button type="button" name="increment" onClick={this.increment}>+</button>
+              </div>
+            </div>
+          );
+        }
+        });
+
+        ReactDOM.render(<Counter />, document.getElementById('app'));
+
+      </script>
+
+  </body>
+</html>
