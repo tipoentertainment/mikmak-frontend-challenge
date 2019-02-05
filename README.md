@@ -41,4 +41,4 @@ Convert your `template.js` files to complete one of the following tasks:
 * Feel free to add styles and comments to your solution as you see fit. 
 * Expectation is that this challenge will take a few hours at most, and can be completed within 5 business days after receiving it. 
 * Commit your changes to the master branch of your forked repo.
-* Let adam@mikmak.tv know when you're finished, or if you have any questions!
+* Let code@mikmak.tv know when you're finished, or if you have any questions!
