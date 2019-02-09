@@ -20,16 +20,20 @@
       var Counter = React.createClass({
         getInitialState() {
           return {
-            count: 0,
+            count: 1,
+            fibSequence: [0, 1],
             title: 'React Counter'
           };
         },
+
         increment() {
-          this.setState({count: this.state.count + 1});
+          const { fibSequence, count } = this.state;
+          let index = fibSequence.length - 1;
+          let fibNumber = fibSequence[index - 1] + fibSequence[index];
+          fibSequence.push(fibNumber);
+          this.setState({count: fibNumber, fibSequence: fibSequence});
         },
-        decrement() {
-          if (this.state.count > 0) this.setState({count: this.state.count - 1});
-        },
+
         render() {
           return (
             <div>
@@ -38,7 +42,6 @@
                 { this.state.count }
               </div>
               <div className="app-counter-buttons">
-                <button type="button" name="decrement" onClick={this.decrement}>-</button>
                 <button type="button" name="increment" onClick={this.increment}>+</button>
               </div>
             </div>
